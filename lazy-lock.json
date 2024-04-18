@@ -1,0 +1,7 @@
+{
+  "harpoon": { "branch": "harpoon2", "commit": "0378a6c428a0bed6a2781d459d7943843f374bce" },
+  "lazy.nvim": { "branch": "main", "commit": "31ddbea7c10b6920c9077b66c97951ca8682d5c8" },
+  "lush.nvim": { "branch": "main", "commit": "bc12f010b34cfeefac35720656eb777753b165d9" },
+  "plenary.nvim": { "branch": "master", "commit": "8aad4396840be7fc42896e3011751b7609ca4119" },
+  "zenbones": { "branch": "main", "commit": "453ec69d82d644ee6998a3464da49d0261df9f80" }
+}
