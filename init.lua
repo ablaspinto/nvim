@@ -1,8 +1,10 @@
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")
+-- or                              , branch = '0.1.x',
 vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
 vim.cmd("set termguicolors")
+vim.g.mapleader = " "
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -19,18 +21,33 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
   {
-    "mcchrish/zenbones.nvim",
-    name = "zenbones",
-    dependencies = {"rktjmp/lush.nvim"}
+    'whatyouhide/vim-gotham',
+    dependencies = {"rktjmp/lush.nvim"},
   },
   {
     "ThePrimeagen/harpoon",
     branch = "harpoon2",
     dependencies = { "nvim-lua/plenary.nvim" }
-  }
+  },
+   {
+    'nvim-telescope/telescope.nvim', tag = '0.1.6',
+    dependencies = { 'nvim-lua/plenary.nvim' }
+    },
+    {
+      {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"}
+    }
 }
 
 
 local opts = {}
 require("lazy").setup(plugins, opts)
-vim.cmd.colorscheme "neobones"
+local builtin = require("telescope.builtin")
+vim.keymap.set('n','<leader>fg',builtin.live_grep,{})
+vim.keymap.set('n','<C-p>',builtin.find_files,{})
+local config = require("nvim-treesitter.configs")
+config.setup({
+  ensure_installed = {"lua","javascript"},
+  highlight = {enable = true},
+  indent = {enable =true },
+})
+vim.cmd.colorscheme "gotham"
