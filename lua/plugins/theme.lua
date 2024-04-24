@@ -1,9 +1,7 @@
 return {
-	"folke/tokyonight.nvim",
-	lazy = false,
-	priority = 1000,
-	dependencies = { "rktjmp/lush.nvim" },
-	config = function()
-		vim.cmd.colorscheme("tokyonight")
-	end,
+          'AlessandroYorba/Alduin',
+        priority = 1000,
+        config = function()
+            vim.cmd.colorscheme 'alduin'
+  end,
 }
