@@ -10,7 +10,8 @@ return {
         null_ls.builtins.diagnostics.pylint,
     },
      debug = true,
-})
+  })
+    vim.keymap.set('n',"<leader>ds",vim.lsp.buf.format,{})
   end,
 
 }
