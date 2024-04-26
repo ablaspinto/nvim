@@ -27,9 +27,24 @@ return {
 			lspconfig.tsserver.setup({
 				capabilities = capabilities,
 			})
-      lspconfig.pylsp.setup ({
+			lspconfig.pylsp.setup({
+				capabilities = capabilities,
+			})
+			require("lspconfig").cssls.setup({
         capabilities = capabilities,
-      })
+				filetypes = { "css", "scss", "less" },
+				settings = {
+					css = {
+						validate = true,
+					},
+					less = {
+						validate = true,
+					},
+					scss = {
+						validate = true,
+					},
+				},
+			})
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
 			vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, {})
