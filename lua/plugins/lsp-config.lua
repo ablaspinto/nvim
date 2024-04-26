@@ -30,8 +30,21 @@ return {
 			lspconfig.pylsp.setup({
 				capabilities = capabilities,
 			})
+			lspconfig.rust_analyzer.setup({
+				settings = {
+					["rust-analyzer"] = {
+						check = {
+							command = "clippy",
+						},
+						diagnostics = {
+							enable = true,
+						},
+					},
+				},
+			})
+
 			require("lspconfig").cssls.setup({
-        capabilities = capabilities,
+				capabilities = capabilities,
 				filetypes = { "css", "scss", "less" },
 				settings = {
 					css = {
