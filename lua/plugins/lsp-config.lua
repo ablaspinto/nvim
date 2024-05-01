@@ -42,6 +42,9 @@ return {
 					},
 				},
 			})
+    lspconfig.rubocop.setup({
+        capabilities = capabilities,
+      })
 
 			require("lspconfig").cssls.setup({
 				capabilities = capabilities,
