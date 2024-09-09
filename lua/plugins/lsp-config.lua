@@ -46,6 +46,10 @@ return {
         capabilities = capabilities,
       })
 
+      lspconfig.clangd.setup({
+        capabilities = capabilities,
+      })
+
 			require("lspconfig").cssls.setup({
 				capabilities = capabilities,
 				filetypes = { "css", "scss", "less" },
