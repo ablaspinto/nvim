@@ -10,4 +10,5 @@ vim.keymap.set('i','gg',"<Shift-v>",{noremap = true, silent = true})
 vim.keymap.set('n','<leader>ccx',':Git commit<CR>',{} )
 vim.keymap.set('n','<leader>aac',':Git add . <CR>', {})
 vim.opt.clipboard:append("unnamedplus")
+vim.opt.shortmess:append('s')
 
