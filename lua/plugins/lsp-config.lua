@@ -30,21 +30,6 @@ return {
 			lspconfig.pylsp.setup({
 				capabilities = capabilities,
 			})
-			lspconfig.rust_analyzer.setup({
-				settings = {
-					["rust-analyzer"] = {
-						check = {
-							command = "clippy",
-						},
-						diagnostics = {
-							enable = true,
-						},
-					},
-				},
-			})
-    lspconfig.rubocop.setup({
-        capabilities = capabilities,
-      })
 
       lspconfig.clangd.setup({
         capabilities = capabilities,
